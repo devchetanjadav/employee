@@ -3,10 +3,6 @@
 import React from 'react'
 import { useRouter } from 'next/navigation'
 
-interface Props {
-    emp: any
-}
-
 export default function Items(emp){
 
 	const router = useRouter()
