@@ -2,18 +2,18 @@ import Link from 'next/link'
 import React from 'react'
 //import Item from './item'
 
-/*const getEmployees  = async () => {    
+const getEmployees  = async () => {    
   // Because this is server components, we have to define the URL with http
   const res = await fetch(process.env.BASE_URL + '/api/employee', { next: { revalidate: 0 } })
   
   // Define the output to json, because if only res, it will return by any type
   const json = await res.json() 
   return json
-}*/
+}
 
 export default async function Employees(){
 
-  //const employees = await getEmployees()
+  const employees = await getEmployees()
 
   return (
         <div className='w-[1200px] mx-auto py-10'>
