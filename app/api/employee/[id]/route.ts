@@ -13,7 +13,12 @@ export const GET = async (
     	return NextResponse.json({
 	    	"data":result.rows[0]
 	  	});
-    } catch (error) {
-      	return NextResponse.json({ 'error': error.message });
+    } catch (error: unknown) {
+    	if (error instanceof Error) {
+	    console.error("Error message:", error.message);
+	  } else {
+	    console.error("Unknown error:", error);
+	  }
+      	return NextResponse.json({ });
     }
 };
