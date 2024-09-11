@@ -1,4 +1,4 @@
-const pool = require ('../../../db');
+import pool from '../../../db';
 import { NextRequest, NextResponse } from "next/server";
 
 export const GET = async (
