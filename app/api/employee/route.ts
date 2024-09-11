@@ -9,8 +9,13 @@ export const GET = async () => {
     	return NextResponse.json({
 	    	"empData":result.rows
 	  	});
-    } catch (error) {
-      	return NextResponse.json({ error: error.message });
+    } catch (error: unknown) {
+    	if (error instanceof Error) {
+	    	console.error("Error message:", error.message);
+	  	} else {
+	    	console.error("Unknown error:", error);
+	  	}
+      	return NextResponse.json({ });
     }
 };
 
@@ -24,8 +29,13 @@ export const POST = async (req: NextRequest) => {
 		return NextResponse.json({
 			"result": result
 		});
-	} catch (error) {
-      	return NextResponse.json({ error: error.message });
+	} catch (error: unknown) {
+    	if (error instanceof Error) {
+	    	console.error("Error message:", error.message);
+	  	} else {
+	    	console.error("Unknown error:", error);
+	  	}
+      	return NextResponse.json({ });
     }
 };
 
@@ -37,8 +47,13 @@ export const DELETE = async (req: NextRequest) => {
 	try {
       	await pool.query('DELETE FROM employee WHERE id = $1', [id]);
       	return NextResponse.json({});
-    } catch (error) {
-      	return NextResponse.json({ error: error.message });
+    } catch (error: unknown) {
+    	if (error instanceof Error) {
+	    	console.error("Error message:", error.message);
+	  	} else {
+	    	console.error("Unknown error:", error);
+	  	}
+      	return NextResponse.json({ });
     }  	
 };
 
@@ -52,7 +67,12 @@ export const PUT = async (req: NextRequest) => {
 			"result": result.rows[0]
 		});
       	
-    } catch (error) {
-      	return NextResponse.json({ error: error.message });
+    } catch (error: unknown) {
+    	if (error instanceof Error) {
+	    	console.error("Error message:", error.message);
+	  	} else {
+	    	console.error("Unknown error:", error);
+	  	}
+      	return NextResponse.json({ });
     }
 };
