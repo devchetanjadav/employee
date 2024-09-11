@@ -14,6 +14,6 @@ export const GET = async (
 	    	"data":result.rows[0]
 	  	});
     } catch (error) {
-      	return NextResponse.json({ error: error.message });
+      	return NextResponse.json({ 'error': error.message });
     }
 };
