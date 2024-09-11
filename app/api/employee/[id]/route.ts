@@ -15,10 +15,10 @@ export const GET = async (
 	  	});
     } catch (error: unknown) {
     	if (error instanceof Error) {
-	    console.error("Error message:", error.message);
-	  } else {
-	    console.error("Unknown error:", error);
-	  }
+	    	console.error("Error message:", error.message);
+	  	} else {
+	    	console.error("Unknown error:", error);
+	  	}
       	return NextResponse.json({ });
     }
 };

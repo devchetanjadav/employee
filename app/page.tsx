@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import Item from './item'
+//import Item from './item'
 
 const getEmployees  = async () => {    
   // Because this is server components, we have to define the URL with http
@@ -14,6 +14,7 @@ const getEmployees  = async () => {
 export default async function Employees(){
 
   const employees = await getEmployees()
+  console.log(employees)
 
   return (
         <div className='w-[1200px] mx-auto py-10'>
@@ -32,14 +33,9 @@ export default async function Employees(){
                 </tr>
               </thead>
               <tbody>
-                {employees.empData.map((emp: any, i: number) => (
+                {/*{employees.empData.map((emp: any, i: number) => (
                   <Item key={i} emp={emp} />
-                ))}
-
-                {/*{employees.empData.forEach((emp, index) => {
-                  console.log(emp)
-                  //<Item emp={emp} />                  
-                })}*/}
+                ))}*/}
               </tbody>
             </table>
 
